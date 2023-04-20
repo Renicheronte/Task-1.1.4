@@ -10,13 +10,13 @@ public class Util {
     private static final String DB_PASSWORD = "root";
 
     public static Connection getConnection() {
-        Connection connection;
+        Connection connection = null;
         try {
             connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
             return connection;
         } catch (SQLException exception) {
             exception.printStackTrace();
-            return null;
         }
+        return connection;
     }
 }
